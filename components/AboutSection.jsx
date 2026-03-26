@@ -13,7 +13,7 @@ export default function AboutSection() {
   return (
     <section className={styles.aboutSection} id="about">
       <div className={styles.bgTextWrapper}>
-        <div className={styles.bgText}>creative digital ag</div>
+        <div className={styles.bgText}>complex backends</div>
       </div>
       
       <div className={`container ${styles.container}`}>
@@ -31,17 +31,17 @@ export default function AboutSection() {
           >
             <motion.div variants={scrollVar} className={styles.badgeTop}>WHO WE ARE</motion.div>
             <motion.h2 variants={scrollVar} className={styles.title}>
-              We're a creative<br />
-              digital <span className="hand-drawn-underline">agency.</span>
+              We're a futuristic<br />
+              tech solutions <span className="hand-drawn-underline">agency.</span>
             </motion.h2>
             <motion.p variants={scrollVar} className={styles.description}>
-              We are excited for our work and how it positively impacts clients. 
-              With over 12 years of experience have been constantly providing excellent.
+              We blend deep engineering expertise with cutting-edge 3D design.<br/>
+              Specializing in scalable backends, e-commerce, and industrial tech since 2012.
             </motion.p>
             
             <motion.div variants={scrollVar} className={styles.awardsBlock}>
-              <h3 className={styles.awardsTitle}>awwwards.</h3>
-              <p className={styles.awardsDesc}><strong>Awards</strong> - Site of the day 2025</p>
+              <h3 className={styles.awardsTitle}>industrial.</h3>
+              <p className={styles.awardsDesc}><strong>Tech</strong> - Enterprise Scalability</p>
             </motion.div>
           </motion.div>
         </div>
@@ -104,8 +104,8 @@ export default function AboutSection() {
               }} 
               className={styles.experienceBadge}
             >
-              <span className={styles.expNumber}>28<span className={styles.expPlus}>+</span></span>
-              <span className={styles.expText}>Years of trusted<br/>experience.</span>
+              <span className={styles.expNumber}>15<span className={styles.expPlus}>+</span></span>
+              <span className={styles.expText}>Years of robust<br/>engineering.</span>
             </motion.div>
           </motion.div>
         </div>

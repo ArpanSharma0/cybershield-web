@@ -50,9 +50,9 @@ export default function HeroSection() {
         
         <div className={styles.leftContent}>
           <motion.h1 variants={itemVars} className={styles.title}>
-            Building <span className="hand-drawn-underline">brands</span>,<br />
-            one success<br />
-            story at a time.
+            Building complex <span className="hand-drawn-underline" style={{display: "inline-block"}}>tech,</span><br />
+            one solution<br />
+            at a time.
           </motion.h1>
           <motion.div variants={itemVars} className={styles.actionButtons}>
             <button className="btn btn-dark">
@@ -89,7 +89,7 @@ export default function HeroSection() {
                 </defs>
                 <text fontSize="11" fontWeight="600" letterSpacing="2">
                   <textPath href="#circle">
-                    POWERFUL BRANDING SERVICE AGENCY • BASED ON NEW YORK •
+                    ADVANCED TECH SOLUTIONS AGENCY • BASED WORLDWIDE •
                   </textPath>
                 </text>
               </svg>
@@ -120,10 +120,10 @@ export default function HeroSection() {
             <div className={styles.cardHeader}>
               <div className={styles.cardMeta}>
                 <span className={styles.cardLabel}>Trusted by</span>
-                <span className={styles.cardTitle}>Client review</span>
+                <span className={styles.cardTitle}>Top Enterprises</span>
               </div>
               <div className={styles.cardRating}>
-                <Star size={14} fill="white" /> 4.9
+                <Star size={14} fill="white" /> 5.0
               </div>
             </div>
             <div className={styles.cardFooter}>
@@ -133,8 +133,8 @@ export default function HeroSection() {
                 <img src="https://i.pravatar.cc/100?img=3" alt="Avatar 3" />
               </div>
               <div className={styles.happyClients}>
-                <strong>20K+</strong>
-                <span>Happy clients</span>
+                <strong>200+</strong>
+                <span>Tech Deliveries</span>
               </div>
             </div>
           </motion.div>

@@ -24,14 +24,8 @@ export default function Navbar() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <Link href="/">
-            <span className={styles.logoIcon}>
-              <svg viewBox="0 0 24 24" fill="var(--color-primary)" width="24" height="24">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 2L22 12L12 22L2 12Z" fill="white" />
-              </svg>
-            </span>
-            Agen<span className="text-primary">i</span>x
+          <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
+            <img src="/CyberShieldLogoC 1.png" alt="CyberShield Logo" style={{ height: "38px", width: "auto", objectFit: "contain" }} />
           </Link>
         </div>
 
@@ -45,7 +39,7 @@ export default function Navbar() {
         </nav>
 
         <div className={styles.rightActions}>
-          <span className={styles.tagline}>High quality <span style={{textDecoration: "underline"}}>digital experience.</span></span>
+          <span className={styles.tagline}>Advanced tech <span style={{textDecoration: "underline"}}>solutions.</span></span>
           <button className="btn btn-outline" style={{ padding: "10px 24px", borderRadius: "100px" }}>
             <MessageSquare size={16} /> Get in touch
           </button>

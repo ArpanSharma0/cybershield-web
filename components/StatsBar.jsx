@@ -6,25 +6,25 @@ import { motion } from "framer-motion";
 export default function StatsBar() {
   const stats = [
     {
-      value: "92",
-      suffix: "^",
-      text: "93% Growth from last year 2024.",
-    },
-    {
-      value: "98",
+      value: "99.9",
       suffix: "%",
-      text: "Boost successful client call rates.",
+      text: "Uptime on our scalable enterprise backends.",
     },
     {
-      value: "3M",
+      value: "50",
+      suffix: "M+",
+      text: "API requests handled securely every day.",
+    },
+    {
+      value: "100",
       suffix: "+",
-      text: "Active registered happy clients.",
+      text: "Industrial tech implementations completed.",
       isPrimary: true,
     },
     {
-      value: "12",
+      value: "45",
       suffix: "+",
-      text: "We create top worldwide brands.",
+      text: "Immersive 3D web experiences launched.",
     },
   ];
 

@@ -1,28 +1,58 @@
 "use client";
 
 import styles from "./ServicesSection.module.css";
-import { ArrowUpRight, Megaphone, Target, Lightbulb } from "lucide-react";
+import { ArrowUpRight, Database, Cpu, MonitorPlay, BrainCircuit, BarChart, Megaphone, Server, Bot } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function ServicesSection() {
   const services = [
     {
       id: 1,
-      title: "Marketing strategy",
-      description: "We develop targeted marketing strategies that align with your goals and convert into success.",
-      Icon: Megaphone,
+      title: "Complex Backends",
+      description: "Scalable, secure architecture for high-traffic e-commerce and enterprise applications.",
+      Icon: Database,
     },
     {
       id: 2,
-      title: "Business strategy",
-      description: "A well-defined marketing strategy helps position your brand and drive consistent growth.",
-      Icon: Target,
+      title: "Industrial Tech",
+      description: "Smart software, IoT integrations, and robust automation tools for modern industry.",
+      Icon: Cpu,
     },
     {
       id: 3,
-      title: "Product development",
-      description: "We turn ideas into market-ready products through thoughtful design, strategy and innovation.",
-      Icon: Lightbulb,
+      title: "3D Interactive Web",
+      description: "Immersive, animated, WebGL-powered 3D experiences that captivate users.",
+      Icon: MonitorPlay,
+    },
+    {
+      id: 4,
+      title: "LLM Training",
+      description: "Custom fine-tuning and deployment of Large Language Models for enterprise pipelines.",
+      Icon: BrainCircuit,
+    },
+    {
+      id: 5,
+      title: "Business & Data Analytics",
+      description: "Deep data processing, predictive modeling, and targeted business intelligence.",
+      Icon: BarChart,
+    },
+    {
+      id: 6,
+      title: "Digital Marketing",
+      description: "Data-driven marketing strategies to hyper-scale your brand's digital presence.",
+      Icon: Megaphone,
+    },
+    {
+      id: 7,
+      title: "Databases",
+      description: "High-performance database design, optimization, and migration for scalable data storage.",
+      Icon: Server,
+    },
+    {
+      id: 8,
+      title: "AI Agents",
+      description: "Autonomous AI agents to automate workflows, customer service, and internal operations.",
+      Icon: Bot,
     }
   ];
 
@@ -51,33 +81,43 @@ export default function ServicesSection() {
             AGENCY SERVICES
           </div>
           <h2 className={styles.title}>
-            We help you to go online and<br />
-            <span className="hand-drawn-underline">increase your sales.</span>
+            We engineer solutions that<br />
+            <span className="hand-drawn-underline">drive your business.</span>
           </h2>
         </motion.div>
 
-        <motion.div 
-          className={styles.grid}
-          variants={containerVars}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {services.map((service) => (
-            <motion.div key={service.id} className={styles.card} variants={itemVars}>
-              <div className={styles.cardContent}>
-                <h3 className={styles.cardTitle}>{service.title}</h3>
-                <p className={styles.cardDesc}>{service.description}</p>
-                <div className={styles.cardArrow}>
-                  <ArrowUpRight size={18} />
+        <div className={styles.grid}>
+          {services.map((service, index) => {
+            // Calculate a stacked top offset mapping to the index
+            const topOffset = 100 + index * 20;
+
+            return (
+              <motion.div 
+                key={service.id} 
+                className={styles.card}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                style={{
+                  top: `${topOffset}px`,
+                  zIndex: index,
+                }}
+              >
+                <div className={styles.cardContent}>
+                  <h3 className={styles.cardTitle}>{service.title}</h3>
+                  <p className={styles.cardDesc}>{service.description}</p>
+                  <div className={styles.cardArrow}>
+                    <ArrowUpRight size={18} />
+                  </div>
                 </div>
-              </div>
-              <div className={styles.cardIconBg}>
-                <service.Icon size={120} strokeWidth={1} className={styles.iconGhost} />
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+                <div className={styles.cardIconBg}>
+                  <service.Icon size={120} strokeWidth={1} className={styles.iconGhost} />
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
 
         <motion.div 
           className={styles.bottomLink}

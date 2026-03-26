@@ -6,11 +6,11 @@ import { motion } from "framer-motion";
 
 export default function AwardsSection() {
   const awards = [
-    { year: "2025", recognition: "Honors", platform: "Awwwards", project: "Cropo identity" },
-    { year: "2025", recognition: "Site of the month", platform: "CSS Design awards", project: "Violator series" },
-    { year: "2024", recognition: "Site of the day", platform: "The portfolio", project: "Harddot stone" },
-    { year: "2024", recognition: "Site of the day", platform: "One page love", project: "Tailoring inteo" },
-    { year: "2023", recognition: "Mobile excellence", platform: "The portfolio", project: "CSS Awards" },
+    { year: "2026", recognition: "Best API Architecture", platform: "Global Tech Awards", project: "E-Com Backend" },
+    { year: "2025", recognition: "Innovation in IoT", platform: "Industrial Tech Summit", project: "Factory Automation" },
+    { year: "2024", recognition: "Immersive Web Experience", platform: "Awwwards", project: "3D Product Viewer" },
+    { year: "2024", recognition: "Excellence in E-Commerce", platform: "E-tail Awards", project: "Global Marketplace" },
+    { year: "2023", recognition: "Best Enterprise Solution", platform: "SaaS Awards", project: "Data Management API" },
   ];
 
   return (

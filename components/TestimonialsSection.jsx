@@ -13,17 +13,17 @@ export default function TestimonialsSection() {
     {
       id: 1,
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop",
-      quote: "Impressive design and smooth performance. The code is well-structured and everything works flawlessly across devices. Highly recommended! The layout is intuitive and it helped speed up my workflow significantly.",
-      name: "Alexander harad",
-      role: "Creative director",
+      quote: "Cybershield delivered a flawless backend architecture that scales effortlessly. Our e-commerce platform handles peak traffic with zero downtime. Highly recommended for complex engineering!",
+      name: "Alexander Harad",
+      role: "CTO, Global Retail",
       logo: "https://upload.wikimedia.org/wikipedia/commons/a/af/Monday_logo.svg"
     },
     {
       id: 2,
       image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop",
-      quote: "A beautifully crafted theme that's perfect for developers and designers. Fast loading and packed with useful components. Highly recommended! The layout is intuitive, and it helped speed up my workflow significantly.",
-      name: "Matthew taylor",
-      role: "Office manager",
+      quote: "The interactive 3D product viewer they built for us completely transformed our sales process. Flawless WebGL performance and elegant integration with our industrial systems.",
+      name: "Matthew Taylor",
+      role: "VP of Engineering",
       logo: "https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
     }
   ];

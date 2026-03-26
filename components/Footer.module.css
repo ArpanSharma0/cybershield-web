@@ -1,10 +1,11 @@
 .footerWrap {
-  background-color: var(--color-white);
+  background-color: #ffffff;
 }
 
 .socialBar {
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-light-gray);
 }
 
 .socialContainer {
@@ -18,11 +19,13 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 30px;
+  padding: 28px;
+  font-family: var(--font-heading-family);
   font-weight: 500;
-  color: var(--color-dark);
+  color: var(--color-text);
   border-right: 1px solid var(--color-border);
   transition: all var(--transition-fast);
+  font-size: 0.95rem;
 }
 
 .socialLink:last-child {
@@ -30,13 +33,13 @@
 }
 
 .socialLink:hover {
-  background-color: var(--color-light-gray);
-  color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: #ffffff;
 }
 
 .mainFooter {
-  background-color: #1a1a1a;
-  color: white;
+  background-color: var(--color-dark);
+  color: #94a3b8;
   padding: 100px 0 60px;
   overflow: hidden;
   position: relative;
@@ -49,7 +52,7 @@
   right: 0;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%);
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.05) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -62,21 +65,21 @@
 }
 
 .copyrightIcon {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading-family);
   font-size: 8vw;
-  font-weight: 400;
+  font-weight: 700;
   color: transparent;
-  -webkit-text-stroke: 4px var(--color-primary);
+  -webkit-text-stroke: 2px var(--color-primary);
   line-height: 1;
 }
 
 .massiveText {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading-family);
   font-size: 11vw;
-  font-weight: 500;
-  color: var(--color-white);
+  font-weight: 700;
+  color: #f1f5f9;
   line-height: 1;
-  letter-spacing: -2px;
+  letter-spacing: -3px;
 }
 
 .footerGrid {
@@ -92,7 +95,7 @@
 }
 
 .logo {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading-family);
   font-weight: 700;
   font-size: 1.1rem;
   display: flex;
@@ -102,14 +105,17 @@
 }
 
 .colTitle {
-  font-size: 1rem;
+  font-family: var(--font-heading-family);
+  font-size: 0.9rem;
   font-weight: 600;
-  color: var(--color-white);
-  margin-bottom: 15px;
+  color: #f1f5f9;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .colText {
-  color: rgba(255,255,255,0.5);
+  color: rgba(148, 163, 184, 0.9);
   font-size: 0.9rem;
   line-height: 1.8;
 }
@@ -117,18 +123,19 @@
 .linksCol {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
 }
 
 .footerLink {
-  color: rgba(255,255,255,0.7);
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-family: var(--font-body-family);
+  color: rgba(148, 163, 184, 0.8);
+  font-size: 0.9rem;
+  font-weight: 400;
   transition: color var(--transition-fast);
 }
 
 .footerLink:hover {
-  color: var(--color-primary);
+  color: #ffffff;
 }
 
 .backToTopCol {
@@ -160,17 +167,17 @@
 
 @media (max-width: 768px) {
   .socialContainer {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
   }
   .socialLink {
-    flex: 0 0 50%;
     border-bottom: 1px solid var(--color-border);
+    padding: 20px 10px;
+    font-size: 0.85rem;
   }
-  .socialLink:nth-child(2n) {
+  .socialLink:nth-child(even) {
     border-right: none;
-  }
-  .socialLink:nth-last-child(-n+2) {
-    border-bottom: none;
   }
   .footerGrid {
     grid-template-columns: 1fr;
@@ -179,14 +186,19 @@
     grid-column: span 1;
   }
   .massiveText {
-    font-size: 4rem;
+    font-size: 3rem;
+    letter-spacing: -1px;
   }
   .copyrightIcon {
     font-size: 3rem;
-    -webkit-text-stroke: 2px var(--color-primary);
+    -webkit-text-stroke: 1px var(--color-primary);
+  }
+  .massiveTextWrap {
+    margin-bottom: 60px;
   }
   .backToTopCol {
     justify-content: flex-start;
     margin-top: 20px;
   }
 }
+

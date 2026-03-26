@@ -1,5 +1,5 @@
 .statsBar {
-  background-color: var(--color-white);
+  background-color: #ffffff;
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
 }
@@ -25,13 +25,14 @@
 }
 
 .statValue {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading-family);
   font-size: 3.5rem;
   font-weight: 500;
   color: var(--color-dark);
   line-height: 1;
   display: flex;
   align-items: flex-start;
+  text-shadow: 0 0 15px rgba(248, 250, 252, 0.2);
 }
 
 .suffixSecondary {
@@ -44,6 +45,7 @@
   font-size: 2rem;
   color: var(--color-primary);
   position: relative;
+  text-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
 }
 .suffixPrimary::before {
   content: "";
@@ -55,7 +57,7 @@
   height: 6px;
   background-color: var(--color-primary);
   border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(242, 85, 44, 0.2);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.8), 0 0 16px rgba(14, 165, 233, 0.4);
 }
 
 .statText {
@@ -93,3 +95,6 @@
     border-bottom: none;
   }
 }
+
+
+

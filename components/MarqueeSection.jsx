@@ -1,7 +1,7 @@
 import styles from "./MarqueeSection.module.css";
 
 export default function MarqueeSection() {
-  const text = "Designing memorable brands that connect. Creating cohesive brand experiences. ";
+  const text = "Engineering scalable backends. Designing immersive 3D experiences. Building industrial tech. ";
 
   return (
     <section className={styles.marqueeSection}>
@@ -9,16 +9,16 @@ export default function MarqueeSection() {
         <div className={styles.marqueeContent}>
           <div className={styles.marqueeGroup}>
             {[...Array(3)].map((_, i) => (
-              <span key={i} className={styles.textOutline}>
-                <span className={styles.textSolid}>Strategy.</span> {text}
-              </span>
+               <span key={i} className={styles.textOutline}>
+                 <span className={styles.textSolid}>Solutions.</span> {text}
+               </span>
             ))}
           </div>
-          <div className={styles.marqueeGroup} aria-hidden="true">
+           <div className={styles.marqueeGroup} aria-hidden="true">
             {[...Array(3)].map((_, i) => (
-              <span key={i} className={styles.textOutline}>
-                 <span className={styles.textSolid}>Strategy.</span> {text}
-              </span>
+               <span key={i} className={styles.textOutline}>
+                  <span className={styles.textSolid}>Solutions.</span> {text}
+               </span>
             ))}
           </div>
         </div>

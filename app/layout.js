@@ -1,27 +1,29 @@
-import { Poppins, Inter } from "next/font/google";
+import { Space_Grotesk, DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-heading",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const dmSans = DM_Sans({
+  variable: "--font-body",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata = {
-  title: "Agenix - Branding Studio",
-  description: "Building brands one success story at a time.",
+  title: "CyberShield Technologies",
+  description: "Engineering robust backend-heavy, industrial, and AI systems for modern enterprises.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${inter.variable}`}>
+      <body className={`${spaceGrotesk.variable} ${dmSans.variable}`}>
         {children}
       </body>
     </html>

@@ -1,36 +1,36 @@
 "use client";
 
 import styles from "./FeaturesSection.module.css";
-import { ArrowDownRight, Gem, ShieldCheck, CheckCircle } from "lucide-react";
+import { ArrowDownRight, Server, ShieldCheck, Cog } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function FeaturesSection() {
   const features = [
     {
       id: "01",
-      title: "Strategy meets\n<span class='hand-drawn-underline'>innovation.</span>",
-      description: "Our proven expertise is built on a <span style='text-decoration: underline; text-underline-offset: 4px; font-weight: 500;'>foundation of real-world</span> results, consistent delivery, and client trust. From strategy to execution, we've successfully handled complex challenges across diverse industries.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop",
-      badgeIcon: Gem,
-      badgeText: "Innovative\nstrategies",
+      title: "Scalable\n<span class='hand-drawn-underline'>infrastructure.</span>",
+      description: "Our backends are built on a <span style='text-decoration: underline; text-underline-offset: 4px; font-weight: 500;'>foundation of high availability,</span> robust security, and unparalleled performance. We build systems that never fail under pressure.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+      badgeIcon: Server,
+      badgeText: "Enterprise\ngrade",
       reverse: false
     },
     {
       id: "02",
-      title: "Certified trusted\n<span class='hand-drawn-underline'>specialization.</span>",
-      description: "Our proven expertise is built on a <span style='text-decoration: underline; text-underline-offset: 4px; font-weight: 500;'>foundation of real-world</span> results, consistent delivery, and client trust. From strategy to execution, we've successfully handled complex challenges across diverse industries.",
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800&auto=format&fit=crop",
-      badgeIcon: ShieldCheck,
-      badgeText: "Tailored\napproach",
+      title: "Industrial & IoT\n<span class='hand-drawn-underline'>integrations.</span>",
+      description: "Our proven expertise spans across industrial tech, delivering <span style='text-decoration: underline; text-underline-offset: 4px; font-weight: 500;'>real-time monitoring</span> and hardware-level integrations to connect your physical operations digitally.",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop",
+      badgeIcon: Cog,
+      badgeText: "Smart\nautomation",
       reverse: true
     },
     {
       id: "03",
-      title: "Purely tailored\n<span class='hand-drawn-underline'>deliverables.</span>",
-      description: "Our proven expertise is built on a <span style='text-decoration: underline; text-underline-offset: 4px; font-weight: 500;'>foundation of real-world</span> results, consistent delivery, and client trust. From strategy to execution, we've successfully handled complex challenges across diverse industries.",
-      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop",
-      badgeIcon: CheckCircle,
-      badgeText: "Professional\nexecution",
+      title: "Interactive 3D\n<span class='hand-drawn-underline'>experiences.</span>",
+      description: "We craft visually stunning, WebGL-powered 3D environments that <span style='text-decoration: underline; text-underline-offset: 4px; font-weight: 500;'>captivate users and elevate</span> your brand beyond traditional flat designs.",
+      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop",
+      badgeIcon: ShieldCheck,
+      badgeText: "Immersive\ninnovation",
       reverse: false
     }
   ];
@@ -80,7 +80,7 @@ export default function FeaturesSection() {
                   dangerouslySetInnerHTML={{ __html: feature.description }}
                 />
                 <button className="btn btn-dark" style={{ marginTop: '20px' }}>
-                  <Gem size={16} /> Our services
+                  <Server size={16} /> Our solutions
                 </button>
               </div>
             </motion.div>

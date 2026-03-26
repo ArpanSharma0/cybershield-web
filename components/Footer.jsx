@@ -43,7 +43,7 @@ export default function Footer() {
             transition={{ duration: 0.8 }}
           >
             <div className={styles.copyrightIcon}>©</div>
-            <h2 className={styles.massiveText}>2026 Crafto</h2>
+            <h2 className={styles.massiveText}>2026 Cybershield</h2>
           </motion.div>
 
           <motion.div 
@@ -64,14 +64,8 @@ export default function Footer() {
                 show: { opacity: 1, y: 0 }
               }}
             >
-              <div className={styles.logo}>
-                <span className={styles.logoIcon}>
-                  <svg viewBox="0 0 24 24" fill="var(--color-primary)" width="20" height="20">
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M12 2L22 12L12 22L2 12Z" fill="white" />
-                  </svg>
-                </span>
-                AGEN<span className="text-primary">I</span>X STUDIO
+              <div className={styles.logo} style={{ display: 'flex', alignItems: 'center' }}>
+                <img src="/CyberShieldLogoC 1.png" alt="CyberShield Logo" style={{ height: "38px", width: "auto", objectFit: "contain" }} />
               </div>
             </motion.div>
 
@@ -82,7 +76,7 @@ export default function Footer() {
                 show: { opacity: 1, y: 0 }
               }}
             >
-              <h5 className={styles.colTitle}>Crafto - Netherlands</h5>
+              <h5 className={styles.colTitle}>Cybershield - HQ</h5>
               <p className={styles.colText}>
                 Graaf Florisstraat 22A,<br/>
                 Netherlands - 3021
@@ -96,7 +90,7 @@ export default function Footer() {
                 show: { opacity: 1, y: 0 }
               }}
             >
-              <h5 className={styles.colTitle}>Crafto - Barcelona</h5>
+              <h5 className={styles.colTitle}>Cybershield - APAC</h5>
               <p className={styles.colText}>
                 365 Grand via de courts,<br/>
                 Barcelona - 1422
