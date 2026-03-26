@@ -1,0 +1,147 @@
+.testimonialsSection {
+  padding: 120px 0;
+  background-color: var(--color-light-gray);
+}
+
+.container {
+  max-width: 1000px;
+}
+
+.swiperContainer {
+  padding-bottom: 50px !important;
+}
+
+.testimonialLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.imageCol {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1/1;
+  border-radius: var(--border-radius-lg);
+  overflow: visible;
+}
+
+.personImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius-xl);
+  border-radius: 20px;
+}
+
+.scoreBadge {
+  position: absolute;
+  bottom: 20px;
+  left: -20px;
+  background-color: var(--color-primary);
+  color: white;
+  padding: 20px 25px;
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 10px 30px rgba(242, 85, 44, 0.3);
+  text-align: center;
+  z-index: 2;
+}
+
+.scoreTop {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.scoreStars {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  margin: 5px 0 8px;
+}
+
+.scoreLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.textCol {
+  position: relative;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+.quoteMark {
+  position: absolute;
+  top: -40px;
+  left: 20px;
+  font-family: var(--font-heading);
+  font-size: 15rem;
+  color: rgba(0,0,0,0.03);
+  line-height: 1;
+  z-index: -1;
+}
+
+.companyLogo {
+  height: 25px;
+  margin-bottom: 30px;
+  filter: grayscale(100%);
+}
+
+.quoteText {
+  font-size: 1.15rem;
+  color: var(--color-dark);
+  line-height: 1.7;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+.authorInfo {
+  border-top: 1px solid var(--color-border);
+  padding-top: 20px;
+}
+
+.authorName {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.authorRole {
+  font-size: 0.85rem;
+  color: var(--color-text);
+}
+
+/* Swiper Pagination Overrides */
+:global(.swiper-pagination-bullet) {
+  width: 8px;
+  height: 8px;
+  background: var(--color-border);
+  opacity: 1;
+  transition: all var(--transition-fast);
+}
+
+:global(.swiper-pagination-bullet-active) {
+  background: var(--color-dark);
+  width: 24px;
+  border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+  .testimonialLayout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .scoreBadge {
+    left: 20px;
+  }
+}

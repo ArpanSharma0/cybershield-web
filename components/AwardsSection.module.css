@@ -1,0 +1,103 @@
+.awardsSection {
+  padding: 120px 0;
+  background-color: var(--color-light-gray);
+}
+
+.container {
+  max-width: 1000px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.title {
+  font-size: 3.5rem;
+  color: var(--color-dark);
+  letter-spacing: -1px;
+}
+
+.tableWrapper {
+  width: 100%;
+}
+
+.tableHeader {
+  display: flex;
+  padding: 20px 0;
+  border-bottom: 2px solid var(--color-dark);
+  font-weight: 600;
+  color: var(--color-dark);
+  font-size: 0.95rem;
+}
+
+.tableBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.tableRow {
+  display: flex;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--color-border);
+  align-items: center;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.tableRow:hover {
+  background-color: rgba(0,0,0,0.02);
+  color: var(--color-dark);
+}
+
+.tableRow:hover .arrowIcon {
+  color: var(--color-primary);
+  transform: translate(3px, -3px);
+}
+
+.arrowIcon {
+  transition: all var(--transition-fast);
+  color: var(--color-text);
+  margin-left: auto;
+}
+
+.colYear {
+  flex: 0 0 15%;
+}
+
+.colRecognition {
+  flex: 0 0 35%;
+  color: var(--color-dark);
+}
+
+.colPlatform {
+  flex: 0 0 25%;
+}
+
+.colProject {
+  flex: 0 0 20%;
+}
+
+.colIcon {
+  flex: 0 0 5%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .tableHeader {
+    display: none;
+  }
+  .tableRow {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px 10px;
+  }
+  .colYear { flex: 0 0 100%; font-size: 0.85rem; color: var(--color-primary); }
+  .colRecognition { flex: 0 0 100%; font-size: 1.2rem; }
+  .colPlatform { flex: 1; }
+  .colProject { flex: 1; }
+  .colIcon { flex: 0 0 auto; }
+}

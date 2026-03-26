@@ -1,0 +1,135 @@
+.servicesSection {
+  padding: 100px 0;
+  background-color: var(--color-white);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.title {
+  font-size: 3.5rem;
+  color: var(--color-dark);
+  letter-spacing: -1px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,248,245,1) 0%, rgba(255,255,255,1) 100%);
+  border-radius: var(--border-radius-lg);
+  padding: 50px 40px;
+  overflow: hidden;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  border: 1px solid rgba(242, 85, 44, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.cardContent {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.cardDesc {
+  color: var(--color-text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 280px;
+}
+
+.cardArrow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 45px;
+  height: 45px;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-normal);
+  cursor: pointer;
+}
+
+.card:hover .cardArrow {
+  transform: scale(1.1);
+}
+
+.cardIconBg {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  z-index: 1;
+  opacity: 0.15;
+  color: var(--color-primary);
+  transform: rotate(-10deg);
+  transition: transform var(--transition-normal);
+}
+
+.card:hover .cardIconBg {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.iconGhost {
+  filter: drop-shadow(0 0 20px rgba(242, 85, 44, 0.5));
+}
+
+.bottomLink {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--color-text);
+}
+
+.link {
+  color: var(--color-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.link:hover {
+  color: var(--color-primary);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+}
