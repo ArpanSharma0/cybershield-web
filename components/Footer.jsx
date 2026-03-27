@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./Footer.module.css";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -31,8 +31,8 @@ export default function Footer() {
       {/* Social bar */}
       <div className={styles.socialBar}>
         <div className={styles.socialContainer}>
-          {socials.map((s, i) => (
-            <a key={i} href={s.link} className={styles.socialLink}>
+          {socials.map((s) => (
+            <a key={s.name} href={s.link} className={styles.socialLink}>
               {s.name} <ArrowUpRight size={14} />
             </a>
           ))}
@@ -67,8 +67,9 @@ export default function Footer() {
               transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             >
               <div className={styles.formGroup}>
-                <label className={styles.formLabel}>Name</label>
+                <label htmlFor="footer-name" className={styles.formLabel}>Name</label>
                 <input
+                  id="footer-name"
                   type="text"
                   placeholder="Your name"
                   className={styles.formInput}
@@ -78,8 +79,9 @@ export default function Footer() {
                 />
               </div>
               <div className={styles.formGroup}>
-                <label className={styles.formLabel}>E-mail</label>
+                <label htmlFor="footer-email" className={styles.formLabel}>E-mail</label>
                 <input
+                  id="footer-email"
                   type="email"
                   placeholder="Your email"
                   className={styles.formInput}
@@ -89,8 +91,9 @@ export default function Footer() {
                 />
               </div>
               <div className={styles.formGroup}>
-                <label className={styles.formLabel}>Message</label>
+                <label htmlFor="footer-message" className={styles.formLabel}>Message</label>
                 <textarea
+                  id="footer-message"
                   placeholder="Your message"
                   className={`${styles.formInput} ${styles.formTextarea}`}
                   value={form.message}
@@ -123,6 +126,7 @@ export default function Footer() {
           </motion.div>
 
           {/* Footer grid */}
+          {/* Footer bottom bar */}
           <div className={styles.footerGrid}>
             <div className={styles.brandCol}>
               <img
@@ -132,18 +136,10 @@ export default function Footer() {
               />
             </div>
 
-            <div className={styles.addressCol}>
-              <h5 className={styles.colTitle}>HQ — India</h5>
-              <p className={styles.colText}>NX ONE, T-3, B-1603, 16th floor,<br />Hawelia Road, Amrapali Dream Valley,<br />Greater Noida, UP 201009, India</p>
-            </div>
-
             <div className={styles.linksCol}>
               <Link href="#about" className={styles.footerLink}>About studio</Link>
               <Link href="#services" className={styles.footerLink}>Our services</Link>
               <Link href="#projects" className={styles.footerLink}>Projects</Link>
-            </div>
-
-            <div className={styles.linksCol}>
               <Link href="#blog" className={styles.footerLink}>Latest blog</Link>
               <Link href="#contact" className={styles.footerLink}>Contact us</Link>
             </div>
@@ -152,6 +148,54 @@ export default function Footer() {
               <button onClick={scrollToTop} className={styles.backToTop}>
                 Back to top ↑
               </button>
+            </div>
+          </div>
+
+          {/* Contact Details Grid */}
+          <div className={styles.contactSection}>
+            <div className={styles.contactGrid}>
+              <div className={styles.contactItem}>
+                <div className={styles.contactHeader}>
+                  <Mail className={styles.contactIcon} size={20} />
+                  <h4 className={styles.contactTitle}>For General Enquiry</h4>
+                </div>
+                <div className={styles.contactContent}>
+                  <a href="mailto:info@cybershield.in" className={styles.contactValue}>info@cybershield.in</a>
+                </div>
+              </div>
+
+              <div className={styles.contactItem}>
+                <div className={styles.contactHeader}>
+                  <Mail className={styles.contactIcon} size={20} />
+                  <h4 className={styles.contactTitle}>For Help & Support</h4>
+                </div>
+                <div className={styles.contactContent}>
+                  <a href="mailto:Sales@Cybershield.in" className={styles.contactValue}>Sales@Cybershield.in</a>
+                  <a href="mailto:Support@Cybershield.in" className={styles.contactValue}>Support@Cybershield.in</a>
+                </div>
+              </div>
+
+              <div className={styles.contactItem}>
+                <div className={styles.contactHeader}>
+                  <MapPin className={styles.contactIcon} size={20} />
+                  <h4 className={styles.contactTitle}>CORPORATE OFFICE</h4>
+                </div>
+                <div className={styles.contactContent}>
+                  <p className={styles.contactValue}>
+                    T3, B1603, NXOne, Tech zone 4, Opposite Gaur city mall, Greater Noida, UP, 201306
+                  </p>
+                </div>
+              </div>
+
+              <div className={styles.contactItem}>
+                <div className={styles.contactHeader}>
+                  <Phone className={styles.contactIcon} size={20} />
+                  <h4 className={styles.contactTitle}>Mobile Number</h4>
+                </div>
+                <div className={styles.contactContent}>
+                  <a href="tel:+919315471293" className={styles.contactValue}>+91 9315471293</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

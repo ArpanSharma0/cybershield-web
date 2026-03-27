@@ -169,45 +169,87 @@
   text-transform: uppercase;
 }
 
-.footerGrid {
-  display: grid;
-  grid-template-columns: auto 2fr 1fr 1fr auto;
-  gap: 24px;
-  align-items: start;
-  padding-top: 32px;
+.contactSection {
+  margin-top: 64px;
+  padding-top: 40px;
   border-top: 1px solid var(--color-border);
 }
 
-.brandCol {
-  padding-right: 24px;
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
-.addressCol {
+.contactItem {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  transition: all var(--transition-normal);
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
 
-.colTitle {
-  font-size: 0.75rem;
+.contactItem:hover {
+  transform: translateY(-2px);
+}
+
+.contactHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contactIcon {
+  color: var(--orange);
+}
+
+.contactTitle {
+  font-family: var(--font-heading-family);
+  font-size: 0.875rem;
   color: var(--color-text);
   font-weight: 600;
-  font-family: var(--font-body-family);
-  letter-spacing: 0.5px;
-  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
 }
 
-.colText {
-  font-size: 0.8125rem;
+.contactContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contactValue {
+  font-size: 0.9375rem;
   color: var(--color-text-muted);
   font-family: var(--font-body-family);
-  line-height: 1.6;
+  transition: color var(--transition-fast);
+}
+
+a.contactValue:hover {
+  color: var(--orange);
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 48px;
+  align-items: center;
+}
+
+.brandCol {
+  display: flex;
+  align-items: center;
 }
 
 .linksCol {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  gap: 32px;
+  justify-content: center;
 }
 
 .footerLink {
@@ -244,8 +286,13 @@
 
 /* ---- Responsive ---- */
 @media (max-width: 1024px) {
+  .contactGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .footerGrid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 32px;
   }
 }
 
@@ -261,11 +308,14 @@
     grid-template-columns: 1fr;
     gap: 48px;
   }
-  .footerGrid {
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
+  .contactGrid {
+    grid-template-columns: 1fr;
   }
   .bigText {
     font-size: clamp(2rem, 10vw, 4rem);
+  }
+  .linksCol {
+    flex-wrap: wrap;
+    gap: 16px;
   }
 }
