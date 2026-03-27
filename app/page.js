@@ -2,9 +2,9 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import StatsBar from "@/components/StatsBar";
 import AboutSection from "@/components/AboutSection";
-import PortfolioSection from "@/components/PortfolioSection";
+
 import FeaturesSection from "@/components/FeaturesSection";
-import AwardsSection from "@/components/AwardsSection";
+import IndustriesSection from "@/components/IndustriesSection";
 import MarqueeSection from "@/components/MarqueeSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
@@ -16,9 +16,9 @@ export default function Home() {
       <HeroSection />
       <StatsBar />
       <AboutSection />
-      <PortfolioSection />
+
       <FeaturesSection />
-      <AwardsSection />
+      <IndustriesSection />
       <MarqueeSection />
       <TestimonialsSection />
       <Footer />

@@ -1,89 +1,108 @@
 "use client";
 
 import styles from "./TestimonialsSection.module.css";
-import { Star } from "lucide-react";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper/modules';
 import { motion } from "framer-motion";
-import 'swiper/css';
-import 'swiper/css/pagination';
+import { useState } from "react";
+
+const testimonials = [
+  {
+    id: 1,
+    quote:
+      "Our collaboration was smooth from start to finish. The team took time to understand our business goals, offered thoughtful creative solutions, and delivered a strong visual identity that truly reflects who we are.",
+    name: "Alexander Harad",
+    role: "CTO, Global Retail",
+    avatar: "https://i.pravatar.cc/100?img=11",
+  },
+  {
+    id: 2,
+    quote:
+      "The interactive 3D product viewer they built completely transformed our sales process. WebGL performance was flawless and the integration with our industrial systems was seamless.",
+    name: "Matthew Taylor",
+    role: "VP of Engineering, NexusTech",
+    avatar: "https://i.pravatar.cc/100?img=12",
+  },
+  {
+    id: 3,
+    quote:
+      "CyberShield built our entire data analytics platform from scratch. The backend scales effortlessly and the dashboards are beautiful. Highly recommended for complex engineering work.",
+    name: "Sara Mendes",
+    role: "Product Lead, DataPulse",
+    avatar: "https://i.pravatar.cc/100?img=5",
+  },
+];
+
+const avatarColors = ["#EF6A25", "#535351", "#3a3a38"];
 
 export default function TestimonialsSection() {
-  const testimonials = [
-    {
-      id: 1,
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop",
-      quote: "Cybershield delivered a flawless backend architecture that scales effortlessly. Our e-commerce platform handles peak traffic with zero downtime. Highly recommended for complex engineering!",
-      name: "Alexander Harad",
-      role: "CTO, Global Retail",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/a/af/Monday_logo.svg"
-    },
-    {
-      id: 2,
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop",
-      quote: "The interactive 3D product viewer they built for us completely transformed our sales process. Flawless WebGL performance and elegant integration with our industrial systems.",
-      name: "Matthew Taylor",
-      role: "VP of Engineering",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
-    }
-  ];
+  const [active, setActive] = useState(0);
 
   return (
-    <section className={styles.testimonialsSection}>
-      <motion.div 
-        className={`container ${styles.container}`}
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.8 }}
-      >
-        
-        <Swiper
-          modules={[Pagination, Autoplay]}
-          spaceBetween={50}
-          slidesPerView={1}
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
-          className={styles.swiperContainer}
+    <section className={styles.section}>
+      <div className={styles.container}>
+        {/* Label */}
+        <div className={styles.label}>[Testimonials]</div>
+
+        {/* Heading */}
+        <motion.h2
+          className={styles.heading}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
         >
-          {testimonials.map((testimonial) => (
-            <SwiperSlide key={testimonial.id}>
-              <div className={styles.testimonialLayout}>
-                
-                <div className={styles.imageCol}>
-                  <div className={styles.imageWrapper}>
-                    <img src={testimonial.image} alt={testimonial.name} className={styles.personImage} />
-                    <div className={styles.scoreBadge}>
-                      <div className={styles.scoreTop}>4.9</div>
-                      <div className={styles.scoreStars}>
-                        {[1,2,3,4,5].map(i => <Star key={i} size={10} fill="white" className="text-white" />)}
-                      </div>
-                      <div className={styles.scoreLabel}>Verified score</div>
-                    </div>
-                  </div>
-                </div>
+          OUR CLIENTS SAY
+        </motion.h2>
 
-                <div className={styles.textCol}>
-                  <div className={styles.quoteMark}>"</div>
-                  
-                  <img src={testimonial.logo} alt="Company Logo" className={styles.companyLogo} />
-                  
-                  <p className={styles.quoteText}>
-                    {testimonial.quote}
-                  </p>
-                  
-                  <div className={styles.authorInfo}>
-                    <h5 className={styles.authorName}>{testimonial.name}</h5>
-                    <span className={styles.authorRole}>{testimonial.role}</span>
-                  </div>
-                </div>
-
-              </div>
-            </SwiperSlide>
+        {/* Avatar group */}
+        <div className={styles.avatarGroup}>
+          {testimonials.map((t, i) => (
+            <motion.button
+              key={t.id}
+              className={`${styles.avatarBtn} ${active === i ? styles.avatarActive : ""}`}
+              onClick={() => setActive(i)}
+              style={{ "--btn-color": avatarColors[i] }}
+              whileHover={{ scale: 1.1 }}
+            >
+              <img src={t.avatar} alt={t.name} className={styles.avatarImg} />
+            </motion.button>
           ))}
-        </Swiper>
+          <motion.div
+            className={styles.plusBadge}
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ type: "spring", delay: 0.5 }}
+          >
+            +21
+          </motion.div>
+        </div>
 
-      </motion.div>
+        {/* Quote */}
+        <motion.div
+          key={active}
+          className={styles.quoteWrap}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className={styles.quote}>"{testimonials[active].quote}"</p>
+          <div className={styles.author}>
+            <span className={styles.authorName}>{testimonials[active].name}</span>
+            <span className={styles.authorRole}>[{testimonials[active].role}]</span>
+          </div>
+        </motion.div>
+
+        {/* Dots */}
+        <div className={styles.dots}>
+          {testimonials.map((_, i) => (
+            <button
+              key={i}
+              className={`${styles.dot} ${active === i ? styles.dotActive : ""}`}
+              onClick={() => setActive(i)}
+            />
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

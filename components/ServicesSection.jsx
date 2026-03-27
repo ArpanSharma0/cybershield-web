@@ -1,134 +1,134 @@
 "use client";
 
+import { useState } from "react";
 import styles from "./ServicesSection.module.css";
-import { ArrowUpRight, Database, Cpu, MonitorPlay, BrainCircuit, BarChart, Megaphone, Server, Bot } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { Database, Cpu, MonitorPlay, BrainCircuit, BarChart, Megaphone, Server, Bot } from "lucide-react";
+
+const services = [
+  {
+    id: "01",
+    title: "Complex Backends",
+    description:
+      "Scalable, secure architecture for high-traffic e-commerce and enterprise applications. Built for zero downtime.",
+    Icon: Database,
+    imgs: [
+      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=300&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=300&auto=format&fit=crop",
+    ],
+  },
+  {
+    id: "02",
+    title: "Industrial Tech",
+    description:
+      "Smart software, IoT integrations, and robust automation tools for modern industry and real-time monitoring.",
+    Icon: Cpu,
+    imgs: [
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=300&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=300&auto=format&fit=crop",
+    ],
+  },
+  {
+    id: "03",
+    title: "3D Interactive Web",
+    description:
+      "Immersive, animated, WebGL-powered 3D experiences that captivate users. We do: website design & redesign, UX for web products, interactive layouts & animations, design systems for scalable products.",
+    Icon: MonitorPlay,
+    imgs: [
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=300&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=300&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=300&auto=format&fit=crop",
+    ],
+  },
+  {
+    id: "04",
+    title: "LLM Training",
+    description:
+      "Custom fine-tuning and deployment of Large Language Models for enterprise pipelines and intelligent automation.",
+    Icon: BrainCircuit,
+    imgs: [
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=300&auto=format&fit=crop",
+    ],
+  },
+  {
+    id: "05",
+    title: "Data Analytics",
+    description:
+      "Deep data processing, predictive modeling, and targeted business intelligence dashboards.",
+    Icon: BarChart,
+    imgs: [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=300&auto=format&fit=crop",
+    ],
+  },
+  {
+    id: "06",
+    title: "AI Agents",
+    description:
+      "Autonomous AI agents to automate workflows, customer service, and internal operations at scale.",
+    Icon: Bot,
+    imgs: [
+      "https://images.unsplash.com/photo-1633412802994-5c058f151b66?q=80&w=300&auto=format&fit=crop",
+    ],
+  },
+];
 
 export default function ServicesSection() {
-  const services = [
-    {
-      id: 1,
-      title: "Complex Backends",
-      description: "Scalable, secure architecture for high-traffic e-commerce and enterprise applications.",
-      Icon: Database,
-    },
-    {
-      id: 2,
-      title: "Industrial Tech",
-      description: "Smart software, IoT integrations, and robust automation tools for modern industry.",
-      Icon: Cpu,
-    },
-    {
-      id: 3,
-      title: "3D Interactive Web",
-      description: "Immersive, animated, WebGL-powered 3D experiences that captivate users.",
-      Icon: MonitorPlay,
-    },
-    {
-      id: 4,
-      title: "LLM Training",
-      description: "Custom fine-tuning and deployment of Large Language Models for enterprise pipelines.",
-      Icon: BrainCircuit,
-    },
-    {
-      id: 5,
-      title: "Business & Data Analytics",
-      description: "Deep data processing, predictive modeling, and targeted business intelligence.",
-      Icon: BarChart,
-    },
-    {
-      id: 6,
-      title: "Digital Marketing",
-      description: "Data-driven marketing strategies to hyper-scale your brand's digital presence.",
-      Icon: Megaphone,
-    },
-    {
-      id: 7,
-      title: "Databases",
-      description: "High-performance database design, optimization, and migration for scalable data storage.",
-      Icon: Server,
-    },
-    {
-      id: 8,
-      title: "AI Agents",
-      description: "Autonomous AI agents to automate workflows, customer service, and internal operations.",
-      Icon: Bot,
-    }
-  ];
-
-  const containerVars = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { staggerChildren: 0.2 } }
-  };
-
-  const itemVars = {
-    hidden: { opacity: 0, y: 50 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
-  };
+  const [active, setActive] = useState(2); // '3D Interactive Web' active by default
 
   return (
     <section className={styles.servicesSection} id="services">
-      <div className={`container ${styles.container}`}>
-        
-        <motion.div 
-          className={styles.header}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="badge badge-primary" style={{ marginBottom: "20px" }}>
-            AGENCY SERVICES
-          </div>
-          <h2 className={styles.title}>
-            We engineer solutions that<br />
-            <span className="hand-drawn-underline">drive your business.</span>
-          </h2>
-        </motion.div>
+      <div className={styles.container}>
+        <div className={styles.sectionLabel}>[Services]</div>
 
-        <div className={styles.grid}>
-          {services.map((service, index) => {
-            // Calculate a stacked top offset mapping to the index
-            const topOffset = 100 + index * 20;
-
+        <div className={styles.servicesList}>
+          {services.map((svc, i) => {
+            const isActive = active === i;
             return (
-              <motion.div 
-                key={service.id} 
-                className={styles.card}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6 }}
-                style={{
-                  top: `${topOffset}px`,
-                  zIndex: index,
-                }}
+              <motion.div
+                key={svc.id}
+                className={`${styles.serviceRow} ${isActive ? styles.serviceRowActive : ""}`}
+                onClick={() => setActive(i)}
+                layout
               >
-                <div className={styles.cardContent}>
-                  <h3 className={styles.cardTitle}>{service.title}</h3>
-                  <p className={styles.cardDesc}>{service.description}</p>
-                  <div className={styles.cardArrow}>
-                    <ArrowUpRight size={18} />
-                  </div>
+                <div className={styles.serviceHeader}>
+                  <span className={styles.serviceNum}>{svc.id}</span>
+                  <h3 className={styles.serviceTitle}>{svc.title.toUpperCase()}</h3>
                 </div>
-                <div className={styles.cardIconBg}>
-                  <service.Icon size={120} strokeWidth={1} className={styles.iconGhost} />
-                </div>
+
+                <AnimatePresence>
+                  {isActive && (
+                    <motion.div
+                      className={styles.serviceBody}
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+                    >
+                      <div className={styles.serviceBodyInner}>
+                        <p className={styles.serviceDesc}>{svc.description}</p>
+                        {svc.imgs && (
+                          <div className={styles.serviceImgs}>
+                            {svc.imgs.map((src, idx) => (
+                              <motion.div
+                                key={idx}
+                                className={styles.serviceImgWrap}
+                                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                                animate={{ opacity: 1, y: 0, scale: 1 }}
+                                transition={{ delay: 0.1 + idx * 0.08, duration: 0.5 }}
+                              >
+                                <img src={src} alt={svc.title} className={styles.serviceImg} />
+                              </motion.div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
             );
           })}
         </div>
-
-        <motion.div 
-          className={styles.bottomLink}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.8 }}
-        >
-          Let's make something great work together. <a href="#contact" className={styles.link}>Got a project in mind?</a>
-        </motion.div>
-        
       </div>
     </section>
   );

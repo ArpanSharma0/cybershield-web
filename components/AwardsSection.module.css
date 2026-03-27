@@ -1,36 +1,57 @@
 .awardsSection {
-  padding: 120px 0;
-  background-color: #ffffff;
+  background: transparent;
+  padding: 80px 0 100px;
+  border-top: 1px solid rgba(83, 83, 81, 0.25);
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
 .header {
-  text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .title {
   font-family: var(--font-heading-family);
-  font-size: 3.5rem;
-  color: var(--color-dark);
-  letter-spacing: -1px;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: #535351;
+  font-family: var(--font-body-family);
 }
 
 .tableWrapper {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .tableHeader {
-  display: flex;
-  padding: 20px 0;
-  border-bottom: 2px solid #e2e8f0;
-  font-family: var(--font-heading-family);
-  font-weight: 600;
-  color: var(--color-dark);
-  font-size: 0.95rem;
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr 1fr 40px;
+  gap: 16px;
+  padding: 0 0 16px;
+  border-bottom: 1px solid rgba(83, 83, 81, 0.35);
+  margin-bottom: 4px;
+}
+
+.tableHeader > div {
+  font-size: 0.6875rem;
+  color: #535351;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-family: var(--font-body-family);
 }
 
 .tableBody {
@@ -39,72 +60,74 @@
 }
 
 .tableRow {
-  display: flex;
-  padding: 30px 0;
-  border-bottom: 1px solid rgba(14, 165, 233, 0.1);
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr 1fr 40px;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(83, 83, 81, 0.2);
   align-items: center;
-  transition: all var(--transition-fast);
   cursor: pointer;
-  font-family: var(--font-body-family);
-  font-weight: 500;
-  color: #64748b;
-}
-
-.tableRow:hover {
-  background-color: rgba(14, 165, 233, 0.05);
-  color: var(--color-dark);
-}
-
-.tableRow:hover .arrowIcon {
-  color: var(--color-primary);
-  transform: translate(3px, -3px);
-}
-
-.arrowIcon {
-  transition: all var(--transition-fast);
-  color: #64748b;
-  margin-left: auto;
+  border-radius: 4px;
+  transition: background 0.25s ease;
 }
 
 .colYear {
-  flex: 0 0 15%;
+  font-size: 0.8125rem;
+  color: #535351;
+  font-family: var(--font-body-family);
 }
 
 .colRecognition {
-  flex: 0 0 35%;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #ffffff;
   font-family: var(--font-heading-family);
-  color: #e2e8f0;
 }
 
 .colPlatform {
-  flex: 0 0 25%;
+  font-size: 0.875rem;
+  color: #535351;
+  font-family: var(--font-body-family);
 }
 
 .colProject {
-  flex: 0 0 20%;
+  font-size: 0.875rem;
+  color: #535351;
+  font-family: var(--font-body-family);
 }
 
 .colIcon {
-  flex: 0 0 5%;
   display: flex;
+  align-items: center;
   justify-content: flex-end;
 }
 
+.arrowIcon {
+  color: #535351;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.tableRow:hover .arrowIcon {
+  color: #EF6A25;
+  transform: translate(2px, -2px);
+}
+
 @media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
   .tableHeader {
     display: none;
   }
   .tableRow {
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 20px 10px;
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 16px 0;
   }
-  .colYear { flex: 0 0 100%; font-size: 0.85rem; color: var(--color-primary); }
-  .colRecognition { flex: 0 0 100%; font-size: 1.2rem; }
-  .colPlatform { flex: 1; }
-  .colProject { flex: 1; }
-  .colIcon { flex: 0 0 auto; }
+  .colYear {
+    font-size: 0.75rem;
+  }
+  .colIcon {
+    justify-content: flex-start;
+  }
 }
-
-
-

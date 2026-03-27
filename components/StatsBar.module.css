@@ -1,22 +1,24 @@
 .statsBar {
-  background-color: #ffffff;
+  background: transparent;
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
+  padding: 64px 0;
 }
 
 .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }
 
 .statItem {
-  flex: 1;
   display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 40px 30px;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 32px;
   border-right: 1px solid var(--color-border);
 }
 
@@ -26,75 +28,29 @@
 
 .statValue {
   font-family: var(--font-heading-family);
-  font-size: 3.5rem;
-  font-weight: 500;
-  color: var(--color-dark);
-  line-height: 1;
-  display: flex;
-  align-items: flex-start;
-  text-shadow: 0 0 15px rgba(248, 250, 252, 0.2);
-}
-
-.suffixSecondary {
-  font-size: 1.5rem;
-  color: var(--color-primary);
-  margin-top: 5px;
-}
-
-.suffixPrimary {
-  font-size: 2rem;
-  color: var(--color-primary);
-  position: relative;
-  text-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
-}
-.suffixPrimary::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 6px;
-  height: 6px;
-  background-color: var(--color-primary);
-  border-radius: 50%;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.8), 0 0 16px rgba(14, 165, 233, 0.4);
-}
-
-.statText {
-  font-size: 0.95rem;
+  font-size: 2.8rem;
+  font-weight: 800;
   color: var(--color-text);
-  margin-bottom: 0;
-  max-width: 160px;
-  line-height: 1.4;
-  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1;
 }
 
-@media (max-width: 1024px) {
+.statLabel {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
   .container {
-    flex-wrap: wrap;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 20px;
+    gap: 24px;
   }
   .statItem {
-    flex: 0 0 50%;
-    border-bottom: 1px solid var(--color-border);
-  }
-  .statItem:nth-child(2n) {
     border-right: none;
-  }
-  .statItem:nth-last-child(-n+2) {
-    border-bottom: none;
+    padding: 0;
   }
 }
-
-@media (max-width: 640px) {
-  .statItem {
-    flex: 0 0 100%;
-    border-right: none;
-    border-bottom: 1px solid var(--color-border);
-  }
-  .statItem:last-child {
-    border-bottom: none;
-  }
-}
-
-
-

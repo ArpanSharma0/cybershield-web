@@ -1,17 +1,11 @@
-import { Space_Grotesk, DM_Sans } from "next/font/google";
+import { Lexend } from "next/font/google";
 import "./globals.css";
+import CursorGlow from "@/components/CursorGlow";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-heading",
+const lexend = Lexend({
+  variable: "--font-lexend",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -22,8 +16,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${spaceGrotesk.variable} ${dmSans.variable}`}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${lexend.variable} ${lexend.className}`}>
+        <CursorGlow />
         {children}
       </body>
     </html>

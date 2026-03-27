@@ -1,0 +1,38 @@
+.toggle {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: var(--color-glass);
+  color: var(--color-text);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.35s ease;
+  margin-right: 12px;
+}
+
+.toggle:hover {
+  background: var(--color-border);
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.iconContainer {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
