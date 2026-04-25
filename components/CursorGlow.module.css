@@ -1,8 +1,0 @@
-.glow {
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  z-index: -1; /* Behind everything */
-  background: #0A0A0A; /* Deeper, more luxurious black */
-  will-change: background;
-}

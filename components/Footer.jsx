@@ -1,203 +1,87 @@
 "use client";
-
-import styles from "./Footer.module.css";
-import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { Github, Twitter, Linkedin, Instagram, Mail, MapPin, Phone } from "lucide-react";
 
-const socials = [
-  { name: "Facebook", link: "#" },
-  { name: "Twitter", link: "#" },
-  { name: "Dribbble", link: "#" },
-  { name: "Instagram", link: "#" },
-];
+const footerLinks = {
+  Services: ["SEO Optimization", "Paid Advertising", "Website Development", "Ecommerce Growth", "App Development", "Website Maintenance"],
+  Company: ["About Us", "Case Studies", "Our Process", "Careers", "Privacy Policy", "Terms of Service"],
+};
 
 export default function Footer() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [sent, setSent] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
-    setForm({ name: "", email: "", message: "" });
-  };
-
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
-
   return (
-    <footer className={styles.footer} id="contact">
-      {/* Social bar */}
-      <div className={styles.socialBar}>
-        <div className={styles.socialContainer}>
-          {socials.map((s) => (
-            <a key={s.name} href={s.link} className={styles.socialLink}>
-              {s.name} <ArrowUpRight size={14} />
-            </a>
-          ))}
-        </div>
-      </div>
+    <footer className="bg-background pt-24 pb-12 border-t border-stroke">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+          <div>
+            <Link href="/" className="text-3xl font-bold tracking-tighter flex items-center gap-2 mb-8">
+              <span className="w-8 h-8 bg-accent-gradient rounded-full" />
+              CyberShield
+            </Link>
+            <p className="text-muted leading-relaxed mb-8">
+              Growth-focused agency that builds revenue-generating websites and marketing systems. 
+              Helping startups and businesses scale since 2012.
+            </p>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-stroke bg-surface/30 w-fit">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+              </span>
+              <span className="text-sm font-medium text-muted uppercase tracking-widest">Available for Q2 Projects</span>
+            </div>
+          </div>
 
-      {/* Transform section + Form */}
-      <div className={styles.transformSection}>
-        <div className={styles.container}>
-          <div className={styles.transformGrid}>
-            {/* Left: Heading */}
-            <motion.div
-              className={styles.transformLeft}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <h2 className={styles.transformHeading}>TRANSFORM YOUR BRAND</h2>
-              <p className={styles.transformSub}>
-                Ready to start a project? Leave a message or reach us directly.
-              </p>
-            </motion.div>
+          <div>
+            <h4 className="text-lg font-bold mb-8 uppercase tracking-widest text-foreground">Services</h4>
+            <ul className="flex flex-col gap-4 text-muted">
+              {footerLinks.Services.map((link) => (
+                <li key={link}>
+                  <Link href="#" className="hover:text-accent transition-colors">{link}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            {/* Right: Form */}
-            <motion.form
-              className={styles.form}
-              onSubmit={handleSubmit}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <div className={styles.formGroup}>
-                <label htmlFor="footer-name" className={styles.formLabel}>Name</label>
-                <input
-                  id="footer-name"
-                  type="text"
-                  placeholder="Your name"
-                  className={styles.formInput}
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  required
-                />
-              </div>
-              <div className={styles.formGroup}>
-                <label htmlFor="footer-email" className={styles.formLabel}>E-mail</label>
-                <input
-                  id="footer-email"
-                  type="email"
-                  placeholder="Your email"
-                  className={styles.formInput}
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  required
-                />
-              </div>
-              <div className={styles.formGroup}>
-                <label htmlFor="footer-message" className={styles.formLabel}>Message</label>
-                <textarea
-                  id="footer-message"
-                  placeholder="Your message"
-                  className={`${styles.formInput} ${styles.formTextarea}`}
-                  value={form.message}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  rows={4}
-                  required
-                />
-              </div>
-              <button type="submit" className={styles.sendBtn}>
-                {sent ? "Message sent ✓" : "Send message"}
-              </button>
-            </motion.form>
+          <div>
+            <h4 className="text-lg font-bold mb-8 uppercase tracking-widest text-foreground">Company</h4>
+            <ul className="flex flex-col gap-4 text-muted">
+              {footerLinks.Company.map((link) => (
+                <li key={link}>
+                  <Link href="#" className="hover:text-accent transition-colors">{link}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-bold mb-8 uppercase tracking-widest text-foreground">Contact</h4>
+            <ul className="flex flex-col gap-6 text-muted">
+              <li className="flex items-start gap-3">
+                <MapPin size={20} className="text-accent shrink-0" />
+                <span>123 Growth St, San Francisco, CA 94103</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone size={20} className="text-accent shrink-0" />
+                <span>+1 (555) 000-0000</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail size={20} className="text-accent shrink-0" />
+                <span>hello@cybershield.agency</span>
+              </li>
+            </ul>
+            
+            <div className="mt-10 flex gap-4">
+              {[Twitter, Linkedin, Instagram, Github].map((Icon, i) => (
+                <Link key={i} href="#" className="w-10 h-10 rounded-full border border-stroke flex items-center justify-center hover:bg-accent-gradient hover:border-transparent transition-all group">
+                  <Icon size={18} className="group-hover:text-white" />
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom footer */}
-      <div className={styles.bottomFooter}>
-        <div className={styles.container}>
-          {/* Big year text */}
-          <motion.div
-            className={styles.bigTextWrap}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <span className={styles.bigTextSymbol}>©</span>
-            <h2 className={styles.bigText}>2026 Cybershield</h2>
-          </motion.div>
-
-          {/* Footer grid */}
-          {/* Footer bottom bar */}
-          <div className={styles.footerGrid}>
-            <div className={styles.brandCol}>
-              <img
-                src="/CyberShieldLogoC 1.png"
-                alt="CyberShield Logo"
-                style={{ height: "32px", width: "auto", objectFit: "contain" }}
-              />
-            </div>
-
-            <div className={styles.linksCol}>
-              <Link href="#about" className={styles.footerLink}>About studio</Link>
-              <Link href="#services" className={styles.footerLink}>Our services</Link>
-              <Link href="#projects" className={styles.footerLink}>Projects</Link>
-              <Link href="#blog" className={styles.footerLink}>Latest blog</Link>
-              <Link href="#contact" className={styles.footerLink}>Contact us</Link>
-            </div>
-
-            <div className={styles.topCol}>
-              <button onClick={scrollToTop} className={styles.backToTop}>
-                Back to top ↑
-              </button>
-            </div>
-          </div>
-
-          {/* Contact Details Grid */}
-          <div className={styles.contactSection}>
-            <div className={styles.contactGrid}>
-              <div className={styles.contactItem}>
-                <div className={styles.contactHeader}>
-                  <Mail className={styles.contactIcon} size={20} />
-                  <h4 className={styles.contactTitle}>For General Enquiry</h4>
-                </div>
-                <div className={styles.contactContent}>
-                  <a href="mailto:info@cybershield.in" className={styles.contactValue}>info@cybershield.in</a>
-                </div>
-              </div>
-
-              <div className={styles.contactItem}>
-                <div className={styles.contactHeader}>
-                  <Mail className={styles.contactIcon} size={20} />
-                  <h4 className={styles.contactTitle}>For Help & Support</h4>
-                </div>
-                <div className={styles.contactContent}>
-                  <a href="mailto:Sales@Cybershield.in" className={styles.contactValue}>Sales@Cybershield.in</a>
-                  <a href="mailto:Support@Cybershield.in" className={styles.contactValue}>Support@Cybershield.in</a>
-                </div>
-              </div>
-
-              <div className={styles.contactItem}>
-                <div className={styles.contactHeader}>
-                  <MapPin className={styles.contactIcon} size={20} />
-                  <h4 className={styles.contactTitle}>CORPORATE OFFICE</h4>
-                </div>
-                <div className={styles.contactContent}>
-                  <p className={styles.contactValue}>
-                    T3, B1603, NXOne, Tech zone 4, Opposite Gaur city mall, Greater Noida, UP, 201306
-                  </p>
-                </div>
-              </div>
-
-              <div className={styles.contactItem}>
-                <div className={styles.contactHeader}>
-                  <Phone className={styles.contactIcon} size={20} />
-                  <h4 className={styles.contactTitle}>Mobile Number</h4>
-                </div>
-                <div className={styles.contactContent}>
-                  <a href="tel:+919315471293" className={styles.contactValue}>+91 9315471293</a>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="pt-12 border-t border-stroke text-center text-sm text-muted">
+          <p>© 2026 CyberShield Agency. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

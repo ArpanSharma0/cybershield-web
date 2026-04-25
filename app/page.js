@@ -1,29 +1,38 @@
+"use client";
+import React, { useState } from "react";
+import LoadingScreen from "@/components/LoadingScreen";
 import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import StatsBar from "@/components/StatsBar";
-import AboutSection from "@/components/AboutSection";
-
-import FeaturesSection from "@/components/FeaturesSection";
-import IndustriesSection from "@/components/IndustriesSection";
-import MarqueeSection from "@/components/MarqueeSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
+import Works from "@/components/Works";
+import Journal from "@/components/Journal";
+import Explorations from "@/components/Explorations";
+import Stats from "@/components/Stats";
+import ContactFooter from "@/components/ContactFooter";
+import SmoothScroll from "@/components/SmoothScroll";
+import { AnimatePresence } from "framer-motion";
 
 export default function Home() {
-  return (
-    <>
-      <main>
-        <Navbar />
-        <HeroSection />
-        <StatsBar />
-        <AboutSection />
+  const [loading, setLoading] = useState(true);
 
-        <FeaturesSection />
-        <IndustriesSection />
-        <MarqueeSection />
-        <TestimonialsSection />
-      </main>
-      <Footer />
-    </>
+  return (
+    <main className="relative min-h-screen bg-bg selection:bg-accent-gradient selection:text-white overflow-hidden font-body">
+      <AnimatePresence mode="wait">
+        {loading && (
+          <LoadingScreen key="loader" onComplete={() => setLoading(false)} />
+        )}
+      </AnimatePresence>
+      
+      {!loading && (
+        <SmoothScroll>
+          <Navbar />
+          <Hero />
+          <Works />
+          <Journal />
+          <Explorations />
+          <Stats />
+          <ContactFooter />
+        </SmoothScroll>
+      )}
+    </main>
   );
 }

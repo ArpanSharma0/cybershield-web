@@ -1,25 +1,31 @@
-import { Lexend } from "next/font/google";
+import { Inter, Instrument_Serif } from "next/font/google";
 import "./globals.css";
-import CursorGlow from "@/components/CursorGlow";
+import SmoothScroll from "@/components/SmoothScroll";
 
-const lexend = Lexend({
-  variable: "--font-lexend",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  display: "swap",
+});
+
+const instrument = Instrument_Serif({
+  variable: "--font-instrument",
+  subsets: ["latin"],
+  weight: "400",
+  style: "italic",
 });
 
 export const metadata = {
-  title: "CyberShield Technologies",
-  description: "Engineering robust backend-heavy, industrial, and AI systems for modern enterprises.",
+  title: "CyberShield | Digital Agency & Marketing Systems",
+  description: "Growth-focused agency that builds revenue-generating websites and marketing systems.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${lexend.variable} ${lexend.className}`}>
-        <CursorGlow />
-        {children}
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.variable} ${instrument.variable} font-sans bg-bg text-text-primary antialiased`}>
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );
