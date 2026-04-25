@@ -6,33 +6,33 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 const works = [
   {
     id: 1,
-    title: "SEO & Organic Growth",
-    category: "Advanced SEO Strategy",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1470",
+    title: "Digital & Performance Marketing",
+    description: "Scale traffic, optimize funnels, and convert users into revenue.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
     colSpan: "md:col-span-7",
     aspect: "aspect-[16/9] md:aspect-auto"
   },
   {
     id: 2,
-    title: "Performance Marketing",
-    category: "ROI-Focused Ads",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1470",
+    title: "E-commerce & Marketplace",
+    description: "Build high-converting online stores and scalable commerce systems.",
+    image: "https://images.unsplash.com/photo-1515169067868-5387ec356754",
     colSpan: "md:col-span-5",
     aspect: "aspect-[4/5] md:aspect-auto"
   },
   {
     id: 3,
-    title: "Website Development",
-    category: "Conversion-Focused UX",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1470",
+    title: "Web & App Development",
+    description: "Fast, scalable, and modern digital products engineered to perform.",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
     colSpan: "md:col-span-5",
     aspect: "aspect-[4/5] md:aspect-auto"
   },
   {
     id: 4,
-    title: "Ecommerce Growth",
-    category: "Scalable Platforms",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1470",
+    title: "GenAI & Agentic AI",
+    description: "Automate workflows, build AI agents, and scale business intelligence.",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
     colSpan: "md:col-span-7",
     aspect: "aspect-[16/9] md:aspect-auto"
   }
@@ -40,7 +40,7 @@ const works = [
 
 export default function Works() {
   return (
-    <section id="work" className="py-24 md:py-32 bg-bg relative overflow-hidden">
+    <section id="work" className="py-16 md:py-24 bg-bg relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
         {/* Header */}
         <motion.div
@@ -48,7 +48,7 @@ export default function Works() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
-          className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-8"
+          className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-8"
         >
           <div className="max-w-xl">
             <div className="flex items-center gap-4 mb-6">
@@ -80,7 +80,7 @@ export default function Works() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: work.id * 0.1 }}
-              className={`${work.colSpan} ${work.aspect} min-h-[400px] group relative rounded-3xl overflow-hidden bg-surface border border-stroke cursor-pointer`}
+              className={`${work.colSpan} ${work.aspect} min-h-[280px] md:min-h-[300px] group relative rounded-3xl overflow-hidden bg-surface border border-stroke cursor-pointer`}
             >
               {/* Image */}
               <img
