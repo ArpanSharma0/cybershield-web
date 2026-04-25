@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const works = [
   {
@@ -9,6 +10,7 @@ const works = [
     title: "Digital & Performance Marketing",
     description: "Scale traffic, optimize funnels, and convert users into revenue.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+    link: "/services/marketing",
     colSpan: "md:col-span-7",
     aspect: "aspect-[16/9] md:aspect-auto"
   },
@@ -17,6 +19,7 @@ const works = [
     title: "E-commerce & Marketplace",
     description: "Build high-converting online stores and scalable commerce systems.",
     image: "https://images.unsplash.com/photo-1515169067868-5387ec356754",
+    link: "/services/ecommerce",
     colSpan: "md:col-span-5",
     aspect: "aspect-[4/5] md:aspect-auto"
   },
@@ -25,6 +28,7 @@ const works = [
     title: "Web & App Development",
     description: "Fast, scalable, and modern digital products engineered to perform.",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+    link: "/services/development",
     colSpan: "md:col-span-5",
     aspect: "aspect-[4/5] md:aspect-auto"
   },
@@ -33,12 +37,15 @@ const works = [
     title: "GenAI & Agentic AI",
     description: "Automate workflows, build AI agents, and scale business intelligence.",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
+    link: "/services/ai",
     colSpan: "md:col-span-7",
     aspect: "aspect-[16/9] md:aspect-auto"
   }
 ];
 
 export default function Works() {
+  const router = useRouter();
+
   return (
     <section id="work" className="py-16 md:py-24 bg-bg relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
@@ -80,7 +87,8 @@ export default function Works() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: work.id * 0.1 }}
-              className={`${work.colSpan} ${work.aspect} min-h-[280px] md:min-h-[300px] group relative rounded-3xl overflow-hidden bg-surface border border-stroke cursor-pointer`}
+              className={`${work.colSpan} ${work.aspect} min-h-[280px] md:min-h-[300px] group relative rounded-3xl overflow-hidden bg-surface border border-stroke cursor-pointer transition-all duration-300 hover:scale-105`}
+              onClick={() => router.push(work.link)}
             >
               {/* Image */}
               <img
