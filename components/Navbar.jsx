@@ -32,12 +32,12 @@ export default function Navbar() {
       >
         {/* Logo */}
         <Link href="/">
-          <div className="relative group w-9 h-9 rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-110">
+          <div className="relative group w-10 h-10 rounded-full overflow-hidden flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-110">
             {/* Animated Gradient Border */}
-            <div className="absolute inset-0 accent-gradient group-hover:rotate-180 transition-transform duration-700" />
+            <div className="absolute w-[200%] aspect-square accent-gradient group-hover:rotate-180 transition-transform duration-1000" />
             {/* Inner Content */}
             <div className="absolute inset-[2px] bg-bg rounded-full flex items-center justify-center">
-              <span className="font-display italic text-[13px] text-text-primary">CS</span>
+              <img src="/Group 1000004877.svg" alt="CyberShield Logo" className="w-5 h-5 object-contain" />
             </div>
           </div>
         </Link>
@@ -68,8 +68,8 @@ export default function Navbar() {
             {/* Border Glow on Hover */}
             <span className="absolute -inset-[2px] accent-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm -z-10" />
             
-            <div className="text-xs sm:text-sm text-text-primary bg-surface/50 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-all duration-300 backdrop-blur-md flex items-center gap-1">
-              Contact <span className="transform translate-y-[1px]">↗</span>
+            <div className="text-xs sm:text-sm text-text-primary bg-surface/50 group-hover:bg-[#4E85BF] rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-all duration-300 backdrop-blur-md flex items-center gap-1">
+              Contact <span className="transform translate-y-[1px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300">↗</span>
             </div>
           </div>
         </Link>

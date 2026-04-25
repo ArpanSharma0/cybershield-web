@@ -59,6 +59,78 @@ export default function MarketingPage() {
                 </div>
               ))}
             </motion.div>
+
+            {/* SECTION 1: What We Deliver */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="mt-32"
+            >
+              <h2 className="text-3xl md:text-5xl font-display italic mb-12">What We Deliver</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
+                {[
+                  { title: "Data-Driven Performance Marketing", desc: "Precision-targeted multi-channel acquisition engineered to aggressively scale ROAS and drive qualified global traffic." },
+                  { title: "Technical SEO & Organic Architecture", desc: "Algorithm-compliant content structures and advanced technical optimizations to dominate high-intent search real estate." },
+                  { title: "Conversion Rate Optimization (CRO)", desc: "Behavioral UX refinements, multivariate testing, and friction analysis to minimize drop-offs and maximize LTV." },
+                  { title: "Predictive Analytics & Attribution", desc: "Granular, full-funnel data pipelines and custom reporting dashboards for complete visibility and intelligent scaling." }
+                ].map((item, i) => (
+                  <div key={i} className="border-b border-stroke pb-6">
+                    <h3 className="text-xl md:text-2xl font-display mb-3">{item.title}</h3>
+                    <p className="text-muted leading-relaxed">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* SECTION 2: How We Work */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="mt-32"
+            >
+              <h2 className="text-3xl md:text-5xl font-display italic mb-12">How We Work</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                {[
+                  { num: "01", title: "Technical Discovery & Audit" },
+                  { num: "02", title: "Architecture & Strategy" },
+                  { num: "03", title: "Agile Engineering & Execution" },
+                  { num: "04", title: "Continuous Optimization" }
+                ].map((step, i) => (
+                  <div key={i} className="flex flex-col gap-4">
+                    <span className="text-sm text-accent font-display italic tracking-widest">{step.num}</span>
+                    <h3 className="text-xl font-display">{step.title}</h3>
+                    <div className="w-full h-px bg-stroke mt-2" />
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* SECTION 3: Impact / Results */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="mt-32"
+            >
+              <h2 className="text-3xl md:text-5xl font-display italic mb-12">Impact / Results</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {[
+                  "300% YoY Conversion Growth",
+                  "60% Reduction in CPA",
+                  "2x Accelerated Expansion"
+                ].map((impact, i) => (
+                  <div key={i} className="p-8 md:p-10 rounded-[2rem] bg-surface/30 border border-stroke backdrop-blur-md flex items-center justify-center text-center min-h-[200px] hover:border-accent transition-colors duration-300">
+                    <h3 className="text-2xl md:text-3xl font-display italic text-text-primary">{impact}</h3>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
           </div>
         </div>
 
